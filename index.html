@@ -191,6 +191,13 @@ ul.dec li b{color:var(--text)}
 .why{margin-top:14px;padding:14px 16px;border-radius:10px;font-size:18px;line-height:1.4;color:#d9dee6}
 .why.good{background:#1d3a2c;border-left:4px solid var(--good)}
 .why.bad{background:#3a2c1a;border-left:4px solid var(--accent)}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr) 1.5fr;gap:20px;flex:1;min-height:0}
+.pc2{display:flex;flex-direction:column;gap:12px;min-height:0}
+.pc .shot img{object-fit:contain;object-position:top center}
+.pc{display:flex;flex-direction:column;min-height:0}
+.pc .shot{flex:1;min-height:0}
+.pc h3{font-size:24px;margin:8px 0 0}
+.pc p{font-size:17px;color:var(--muted);line-height:1.3}
 /* questions */
 .qgrid{display:grid;grid-template-columns:1fr 1fr;gap:28px;flex:1;min-height:0}
 .q{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px 28px;display:flex;flex-direction:column;min-height:0}
@@ -572,6 +579,112 @@ ul.dec li b{color:var(--text)}
       </ul>
     </div>
   </div>
+</section>
+
+<!-- F1 · Pravilnik -->
+<section class="slide" data-title="Pravilnik">
+  <div class="kicker">Pravilnik · Ctrl+Shift+R</div>
+  <h2>Uređivanje pravila klijenta</h2>
+  <div class="row">
+    <div class="shot" style="width:960px;height:624px;flex:none"><img src="img/feat/rb_1.png" alt="Tablica boja u pravilniku"><div class="cap">Tablica boja: svaki redak se može ispraviti</div></div>
+    <div class="col grow">
+      <p style="margin-bottom:14px">Sve što DST zna o klijentu nalazi se na jednom mjestu, u pet dijelova:</p>
+      <div class="keys" style="gap:12px">
+        <div class="k"><span>1</span><p>Postavke klijenta<small>opća tolerancija, decimale, skošenja, navoji</small></p></div>
+        <div class="k"><span>2</span><p>Tablica boja<small>svaki promijenjeni redak pamti kako je izvorno pročitan</small></p></div>
+        <div class="k"><span>3</span><p>Pravila klijenta<small>sve spremljeno s „Uvijek ovako”, opisano riječima</small></p></div>
+        <div class="k"><span>4</span><p>Opća pravila<small>što DST uopće kotira; svako se uključuje i isključuje</small></p></div>
+        <div class="k"><span>5</span><p>Otvorena pitanja<small>što iz tablice nije jasno</small></p></div>
+      </div>
+      <p class="muted small" style="margin-top:auto">Jedan gumb <b style="color:var(--text)">Spremi</b> za sve. Prije spremanja DST pita treba li i otvoreni crtež slijediti novi pravilnik. Čuva se zadnjih 20 verzija, pa se svaka može vratiti.</p>
+    </div>
+  </div>
+</section>
+
+<!-- F2 · Od odgovora do pravila -->
+<section class="slide" data-title="Od odgovora do pravila">
+  <div class="kicker">Kako DST uči</div>
+  <h2>Jedan klik: od odgovora do pravila</h2>
+  <div class="row" style="align-items:flex-start;gap:30px">
+    <div class="col" style="width:330px;flex:none">
+      <div class="shot" style="height:500px"><img src="img/feat/review_before.png" style="object-fit:cover;object-position:top" alt="Pitanje u Pregledu"></div>
+      <p class="muted small" style="margin-top:10px;font-size:18px">Ø21: boja nema podatak o dosjedu. Konstruktor klikne <b style="color:var(--text)">Uvijek ovako</b>.</p>
+    </div>
+    <div class="op" style="align-self:center">→</div>
+    <div class="col grow">
+      <div class="shot" style="height:500px"><img src="img/feat/rb_2.png" alt="Novo pravilo u pravilniku"><div class="cap">Pravila klijenta: „Dosjed bez podatka o boji (provrt) → bez dosjeda”, za cijelog klijenta</div></div>
+      <div class="row" style="flex:none;gap:22px;margin-top:16px">
+        <div class="card grow" style="padding:14px 18px"><p style="font-size:19px"><b style="color:var(--text)">Sprema se odmah</b>, nije potreban gumb Spremi.</p></div>
+        <div class="card grow" style="padding:14px 18px"><p style="font-size:19px"><b style="color:var(--text)">Piše odakle je:</b> čija odluka, na kojem dijelu i kojeg dana.</p></div>
+        <div class="card grow" style="padding:14px 18px"><p style="font-size:19px"><b style="color:var(--text)">Može se poništiti</b> s Ctrl+Z ili izbrisati u pravilniku.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- F3 · Uključi / isključi -->
+<section class="slide" data-title="Uključi i isključi">
+  <div class="kicker">Prekidači</div>
+  <h2>Uključi i isključi: što je na crtežu</h2>
+  <div class="row" style="gap:34px">
+    <div class="col" style="width:330px;flex:none">
+      <div class="shot" style="height:500px"><img src="img/feat/panel_visibility.png" style="object-fit:cover;object-position:top" alt="Ploča Uklj./Isklj."></div>
+      <p class="muted small" style="margin-top:10px;font-size:18px"><b style="color:var(--text)">Ploča Uklj./Isklj. (Ctrl+5):</b> cijela skupina kota, npr. sve polumjere, isključite jednim klikom. To vrijedi za tog klijenta i ubuduće.</p>
+    </div>
+    <div class="col grow">
+      <div class="row" style="flex:none;gap:18px">
+        <div class="col grow"><div class="shot" style="height:300px"><img src="img/feat/pri_default_c.png" style="background:#fff" alt="Tolerancije uključene"><div class="cap">Tolerancije uključene: 40,0 ±0,02</div></div></div>
+        <div class="col grow"><div class="shot" style="height:300px"><img src="img/feat/pri_tol_off_c.png" style="background:#fff" alt="Tolerancije isključene"><div class="cap">Isključene: samo gdje decimale ne govore dovoljno</div></div></div>
+      </div>
+      <div class="row" style="flex:none;gap:18px;margin-top:20px;align-items:stretch">
+        <div class="shot" style="width:470px;height:300px;flex:none"><img src="img/feat/rb_3.png" style="object-fit:cover;object-position:0 0" alt="Opća pravila"><div class="cap">Opća pravila: što DST uopće kotira</div></div>
+        <div class="col grow" style="justify-content:center">
+          <ul class="clean">
+            <li><b>Tolerancije</b> na listu: uključeno ili isključeno.</li>
+            <li><b>Sakrij</b> pojedinu kotu; vraća se iz izbornika „Skriveno”.</li>
+            <li><b>Samo stavke za pregled</b> (Ctrl+R) sakrije sve sigurno.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- F4 · Okretanje i pogledi -->
+<section class="slide" data-title="Okretanje i pogledi">
+  <div class="kicker">Traka iznad lista</div>
+  <h2>Okretanje, pogledi, mjerilo</h2>
+  <div class="shot" style="height:40px;flex:none;margin-bottom:18px;cursor:default"><img src="img/feat/sheet_bar.png" style="object-fit:contain;object-position:left" alt="Traka lista"></div>
+  <div class="row" style="gap:22px">
+    <div class="col grow"><div class="shot" style="height:470px"><img src="img/feat/izb_default_c.png" style="background:#1d2027" alt="Izbacivač ležeći"><div class="cap">Zadano: dio leži</div></div></div>
+    <div class="col grow"><div class="shot" style="height:470px"><img src="img/feat/izb_upright_toggled_c.png" style="background:#1d2027" alt="Izbacivač uspravno"><div class="cap"><b>Uspravno:</b> dio se okrene za četvrtinu</div></div></div>
+    <div class="col grow"><div class="shot" style="height:470px"><img src="img/feat/izb_view_top_c.png" style="background:#1d2027" alt="Dodan pogled odozgo"><div class="cap"><b>Pogledi:</b> dodan pogled odozgo</div></div></div>
+    <div class="col" style="width:380px">
+      <ul class="clean" style="font-size:20px">
+        <li style="font-size:21px"><b>Uspravno</b>: dugi dio stoji na A4. DST to radi i sam, ali samo ako list bude čitljiviji, a mjerilo ne manje.</li>
+        <li style="font-size:21px"><b>Pogledi</b>: zdesna, slijeva, odozgo, odozdo, straga.</li>
+        <li style="font-size:21px"><b>Skrati</b>: dugi dio crta s prekidom, a kote ostaju prave duljine.</li>
+        <li style="font-size:21px"><b>Format</b> (A4–A1) i <b>Mjerilo</b> − / + / Auto; <b>Razmak</b> kota.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- F5 · Ploče i postavke -->
+<section class="slide" data-title="Ploče i postavke">
+  <div class="kicker">Sve ostalo na dohvat ruke</div>
+  <h2>Ploče i postavke</h2>
+  <div class="pgrid">
+    <div class="pc"><div class="shot"><img src="img/feat/panel_dims.png" alt="Ploča Kote"></div><h3>Kote</h3><p>svaka kota: klasa, provjera, izvor</p></div>
+    <div class="pc"><div class="shot"><img src="img/feat/panel_colours.png" alt="Ploča Boje"></div><h3>Boje</h3><p>koje boje dio ima i nalaze li se u tablici</p></div>
+    <div class="pc"><div class="shot"><img src="img/feat/panel_rules.png" alt="Primijenjena pravila"></div><h3>Primijenjena pravila</h3><p>koje je pravilo dalo koju kotu</p></div>
+    <div class="pc"><div class="shot"><img src="img/feat/panel_layers.png" alt="Slojevi"></div><h3>Slojevi</h3><p>kao u AutoCAD-u: vidljivo, zaključano</p></div>
+    <div class="pc2">
+      <div class="pc"><div class="shot"><img src="img/feat/set_stored.png" alt="Spremljeni podaci"></div><h3>Spremljeni podaci</h3><p>što se čuva, ograničenje, brisanje</p></div>
+      <div class="pc"><div class="shot"><img src="img/feat/set_model.png" alt="Jezični model"></div><h3>Jezični model</h3><p>uključen ili isključen; samo lokalno</p></div>
+    </div>
+  </div>
+  <p class="muted small" style="margin-top:14px">Postavke u izborniku: zaglavlje (Ctrl+T), konfiguracije narudžbi (Ctrl+D), hvatanje objekata, jezik i tema. Svaka ploča se otvara iz izbornika <b style="color:var(--text)">Prozor</b> ili tipkom.</p>
 </section>
 
 <!-- 17 · Brojke: tri skupa -->
