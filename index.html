@@ -495,10 +495,11 @@ table.t td.big{font-family:var(--head);font-size:30px;font-weight:700}
     <div class="col grow">
       <ul class="clean">
         <li><b>Iste tipke, naredbe i miš</b> kao u AutoCAD-u. Nema novog učenja. F1 prikazuje sve tipke.</li>
-        <li>Ručne izmjene spremaju se u projekt, ali <b>ne mijenjaju pravila klijenta</b>. To radi samo „Uvijek ovako”.</li>
+        <li>Ručne izmjene spremaju se u projekt, ali <b>ne mijenjaju pravila klijenta</b>. To radi samo „Uvijek ovako”.<span class="hl">*</span></li>
         <li>Upisana vrijednost koja ne odgovara dijelu: pita se jednom, a onda se prihvati i podcrta kao „nije u mjerilu”.</li>
         <li>Izračunata vrijednost uvijek ostaje zapisana pokraj upisane.</li>
       </ul>
+      <p class="small muted" style="margin-top:auto;border-left:3px solid var(--accent);padding-left:14px"><span class="hl">*</span> Zasad je tako. Planiramo pratiti i bilježiti svaku ručnu izmjenu, kako bi program s vremenom učio iz onoga što konstruktori ispravljaju (učenje s potkrepljenjem, engl. <i>reinforcement learning</i>).</p>
     </div>
   </div>
 </section>
@@ -608,7 +609,7 @@ table.t td.big{font-family:var(--head);font-size:30px;font-weight:700}
   <div class="decision">
     <div class="card"><h3>Tablica boja je zakon</h3><p class="why">Tolerancija dolazi iz kupčeve tablice. ISO 2768-mK samo gdje kupac ne kaže ništa. <b>Svaka kota pamti odakle joj tolerancija.</b></p></div>
     <div class="card"><h3>Pita, ne pogađa</h3><p class="why">Navoj na neobojenoj osovini ili utor za uskočnik ne vide se u 3D modelu. <b>Zato se pita, nikad pretpostavlja.</b></p></div>
-    <div class="card"><h3>Samo „Uvijek” uči</h3><p class="why">Ručne izmjene vrijede za jedan crtež. <b>Pravila klijenta mijenja samo izričit odgovor „Uvijek ovako”</b>, i to se može poništiti.</p></div>
+    <div class="card"><h3>Samo „Uvijek” uči</h3><p class="why">Ručne izmjene vrijede za jedan crtež. <b>Pravila klijenta mijenja samo izričit odgovor „Uvijek ovako”</b>, i to se može poništiti. <span class="hl">Zasad: planiramo učenje iz bilježenih ručnih izmjena.</span></p></div>
     <div class="card"><h3>Sve lokalno</h3><p class="why">Crteži i jezični model ostaju na računalu. <b>Kupčevi podaci ne odlaze nikamo.</b> Program ništa ne šalje sam.</p></div>
     <div class="card"><h3>Kao AutoCAD</h3><p class="why">Tipke, naredbe, hvataljke i miš kopiraju AutoCAD. <b>Konstruktori ne moraju učiti novi program.</b></p></div>
     <div class="card"><h3>Jedna instalacija</h3><p class="why">Jedna setup datoteka, bez administratorskih prava. <b>Pomoć → Prijavi problem</b> složi sve za nas u jedan zip.</p></div>
