@@ -907,7 +907,7 @@ async function makeViewer(el){
   const fill = new THREE.DirectionalLight(0xffffff, .7); fill.position.set(-1.2,-.4,.6); cam.add(fill);
   scene.add(cam);
   const ext = bb.getSize(new THREE.Vector3()); const longish = Math.max(ext.x,ext.y,ext.z) > 2.5*Math.min(ext.x,ext.y,ext.z);
-  const dist = size*(longish ? 1.25 : 1.7);
+  const dist = size*1.7;
   cam.position.set(dist*.62, dist*.42, dist*.72); cam.lookAt(0,0,0);
   const controls = new OrbitControls(cam, renderer.domElement);
   controls.enableDamping = true; controls.autoRotate = true; controls.autoRotateSpeed = 1.4; controls.enablePan = false;
@@ -941,6 +941,11 @@ async function makeViewer(el){
       const w = el.clientWidth, h = el.clientHeight;
       if (renderer.domElement.width !== Math.round(w*renderer.getPixelRatio()) || renderer.domElement.height !== Math.round(h*renderer.getPixelRatio())){
         renderer.setSize(w, h, false); cam.aspect = w/h; cam.updateProjectionMatrix();
+        if (!v.userTouched){
+          const hHalf = Math.atan(Math.tan(THREE.MathUtils.degToRad(15)) * cam.aspect);
+          const d = longish ? (size/2) / Math.tan(hHalf) * 1.08 : size*1.7;
+          cam.position.setLength(d);
+        }
       }
       if (!controls.autoRotate && idle && now-idle > 5000) controls.autoRotate = true;
       if (el.dataset.tour && buttons.length && !manual && now - tourAt > 2600){
